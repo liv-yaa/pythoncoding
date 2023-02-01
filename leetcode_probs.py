@@ -11,19 +11,14 @@ class Solution:
         print(m, type(m))
         # not done!
 
-
-
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        # solution =[0,0]
+        # solution = [0,0]
         # return solution
         # Not done
         for i in range(len(nums)):
             for j in range(i+1, len(nums)):
-                # print(i, j)
                 if nums[i] + nums[j] == target:
                     return [i, j]
-
-    
     
     def isPalindrome(self, x: int) -> bool:
         # Given an integer x, return true if x is a palindrome, and false otherwise.
@@ -32,9 +27,24 @@ class Solution:
 
 s = Solution()
 # s.reverse(x=123) # 321
-s.reverse(x=-123) # -321
+# s.reverse(x=-123) # -321
 # s.reverse(x=120) # 21
 
 
+# Def of singly - linked list (https://leetcode.com/problems/palindrome-linked-list/description/)
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+    
+    def printself(self):
+        print(self.val)
 
-
+class Solution:
+    def isPalindrome(self, head: Optional[ListNode]) -> bool:
+        arr = [head.val]
+        while head.next:
+            head = head.next
+            arr.append(head.val)
+        print('arr', arr)
+        return (arr == arr[::-1])
