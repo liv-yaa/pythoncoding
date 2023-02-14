@@ -16,3 +16,11 @@ async def main():
     print(f"finished at {time.strftime('%X')}")
     
 asyncio.run(main())
+
+
+"""
+started at 17:13:52
+hello
+world
+finished at 17:13:55
+"""
